@@ -1,3 +1,13 @@
+<?php 
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $_POST["username"];
+}
+else{
+    header("Location:.../index.php");
+    die();
+}
+
+?>
 <html lang="en">
 
 <head>

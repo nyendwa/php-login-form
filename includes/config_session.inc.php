@@ -10,3 +10,20 @@ session_set_cookie_params([
     'secure'=>true,
     'httponly'=>true
 ]);
+
+session_start();
+if(!isset($_SESSION["last_regeneration"])){
+   session_regenerate_id(); 
+   $_SESSION["last_regeneration"]=time();
+}
+else{
+    $interval = 60 * 30;
+    if(time()-$_SESSION["last_regeneration"]>=$interval){
+        session_regenerate_id();
+        $_SESSION["last_regeneration"] = time();
+    }
+}
+function regeneration_session_id(){
+    session_regenerate_id();
+    $_SESSION["last_regeneration"] = time();
+}
