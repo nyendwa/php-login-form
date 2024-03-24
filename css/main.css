@@ -1,0 +1,18 @@
+.chawy{
+    text-align: center;
+    align-items: center;
+}
+.loginform{
+    margin: 10px 20px;
+    height: 250px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    border: 2px solid;
+
+}
+.Loginbtn {
+    color: black;
+    text-align: center;
+    margin-right: 20px;
+}
