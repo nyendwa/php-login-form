@@ -1,18 +1,71 @@
 .chawy{
     text-align: center;
     align-items: center;
+    width: max-content;
 }
-.loginform{
+/* Adjustments to .loginform */
+.loginform {
     margin: 10px 20px;
-    height: 250px;
-    width: 200px;
+    width: 300px;
+    /* Adjusted width for better spacing */
+    height: 500px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
     border: 2px solid;
-
+    padding: 20px;
+    /* Adjusted padding for better spacing */
+    display: flex;
+    /* Use flexbox to align items */
+    flex-direction: column;
+    /* Arrange items vertically */
+    justify-content: center;
+    /* Align items vertically */
+    align-items: center;
+    /* Align items horizontally */
 }
-.Loginbtn {
+
+/* Styling for .signup and .login headings */
+.signup,
+.login {
     color: black;
     text-align: center;
-    margin-right: 20px;
+    margin-bottom: 20px;
+    /* Add margin to create space between headings and forms */
+}
+
+/* Styling for forms and buttons */
+form {
+    width: 100%;
+    /* Make form fill the width of the container */
+}
+
+form input,
+form button {
+    display: block;
+    /* Make input fields and buttons display in block */
+    margin-bottom: 10px;
+    /* Add space between input fields and buttons */
+    width: calc(100% - 20px);
+    /* Calculate width to account for padding */
+    padding: 10px;
+    /* Add padding to input fields and buttons */
+    border-radius: 5px;
+    /* Add border radius */
+    border: 1px solid #ccc;
+    /* Add border */
+}
+
+button {
+    background-color: #007bff;
+    /* Button background color */
+    color: white;
+    /* Button text color */
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Button background color on hover */
 }
