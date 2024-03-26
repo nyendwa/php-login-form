@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$dbname = 'myDB';
+$dbname = 'mydb';
 $dbusername = 'root';
 $dbpassword = '';
 
@@ -9,8 +9,10 @@ $dbpassword = '';
 try {
     //code...
 
-    $conns = new PDO('mysql:host=$host; dbname=$dbname', $dbusername,$dbpassword);
+    $conns = new PDO("mysql:host=$host; dbname=$dbname", $dbusername,$dbpassword);
     $conns->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die('Connecttion failed: ' . $e->getMessage());
+    echo "Connected successfully";
+} 
+catch (PDOException $e) {
+    die("Connecttion failed-: " . $e->getMessage());
 }
