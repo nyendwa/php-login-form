@@ -19,19 +19,21 @@ function get_email(object $pdo, string $email){
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
-function set_user(object $pdo,string $psw,string $username,string $email)
+function set_user(object $pdo,string $psw,
+string $username,string $email)
 {
-    $query = "INSERT INTO users(username,psw,email,) VALUES (:username,:psw,:email);";
+    $query = "INSERT INTO users (username,psw,email) 
+    VALUES (:username,:psw,:email);";
     $stmt = $pdo->prepare($query);
 
     $options = [
 'cost'=>12
     ];
 
-    $hashedpsw=password_hash($psw,PASSWORD_BCRYPT,$options);
+    $hashedPsw=password_hash($psw, PASSWORD_BCRYPT, $options);
     
     $stmt->bindParam(":username", $username);
-    $stmt->bindParam(":psw", $hashedpsw);
+    $stmt->bindParam(":psw", $hashedPsw);
     $stmt->bindParam(":email", $email);
     $stmt->execute();
 }

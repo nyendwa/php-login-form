@@ -43,8 +43,16 @@ if(isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST"){
             // If there are errors, redirect back to the index page with error messages
             if($errors){
                 $_SESSION["errors_signup"] = $errors;
+
+                $signupData = [
+                    "username"=>$username,
+                    "email"=>$email,
+                ];
+                $_SESSION["signup_data"] = $signupData;
+                
                 header("Location: ../index.php");
-                exit(); // Terminate script execution
+                exit(); 
+                // Terminate script execution
             }
             create_user($pdo, $psw, $username, $email);
 // Redirect if form fields are not set
