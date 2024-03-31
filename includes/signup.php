@@ -46,6 +46,15 @@ if(isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST"){
                 header("Location: ../index.php");
                 exit(); // Terminate script execution
             }
+            create_user($pdo, $psw, $username, $email);
+// Redirect if form fields are not set
+        header("Location: ../index.php?signup=success");
+            $pdo = null;
+            $stmt = null;
+        
+        exit(); // Terminate script execution
+            
+            
         } catch (PDOException $e) {
             // Handling database errors
             die("Query failed: " . $e->getMessage()); 

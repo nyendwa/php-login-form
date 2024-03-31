@@ -32,4 +32,7 @@ function is_email_taken(object $pdo,$email)
     } else {
         return false;
     }
+}function create_user(object $pdo,string $psw,string $username,string $email)
+{
+    set_user( $pdo, $psw, $username, $email);
 }
